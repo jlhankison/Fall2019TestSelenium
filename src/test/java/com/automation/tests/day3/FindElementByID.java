@@ -1,7 +1,7 @@
 package com.automation.tests.day3;
 
 import com.automation.utilities.DriverFactory;
-import com.automation.utilities.Sleep;
+import com.automation.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -15,11 +15,11 @@ public class FindElementByID {
 
         driver.findElement(By.name("username")).sendKeys("tomsmith");
 
-        Sleep.s(3);
+        BrowserUtils.wait(3);
 
         driver.findElement(By.name("password")).sendKeys("SuperSecretPassword");
 
-        Sleep.s(3);
+        BrowserUtils.wait(3);
 
         driver.findElement(By.id("wooden_spoon")).click();
 
@@ -33,13 +33,13 @@ public class FindElementByID {
             System.out.println("TEST FAILED!");
         }
 
-        Sleep.s(4);
+        BrowserUtils.wait(4);
 
         System.out.println(driver.findElement(By.partialLinkText("Logout")).getAttribute("href"));
 
         driver.findElement(By.partialLinkText("Logout")).click();
 
-        Sleep.s(4);
+        BrowserUtils.wait(4);
 
         driver.close();
     }

@@ -1,6 +1,6 @@
 package com.automation.tests.day4;
 
-import com.automation.utilities.Sleep;
+import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +20,7 @@ public class FindElementsTest {
 
         driver.get("http://practice.cybertekschool.com/");
 
-        Sleep.s(3);
+        BrowserUtils.wait(3);
 
         List<WebElement> links =  driver.findElements(By.tagName("a"));
 

@@ -29,7 +29,7 @@ public class EbaySearch{
         String str = driver.findElement(By.className("srp-controls__count-heading")).getText();
 
         // Close the browser because we don't need it anymore
-        driver.close();
+        driver.close();https://gph.is/1a9t7Jn
 
         //removing excess parts of string to get just the number
         str = str.replace(str.substring(str.indexOf(" results")), "");
