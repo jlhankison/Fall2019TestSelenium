@@ -13,7 +13,7 @@ public class DriverFactory {
 
         switch (browserName.toLowerCase()) {
             case ("chrome"):
-                WebDriverManager.chromedriver().setup();
+                WebDriverManager.chromedriver().version("79").setup();
                 return new ChromeDriver();
             case ("firefox"):
                 WebDriverManager.firefoxdriver().setup();
