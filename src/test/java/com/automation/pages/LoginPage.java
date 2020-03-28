@@ -10,20 +10,31 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
     @FindBy(id = "prependedInput")
-    public WebElement username;
+    private WebElement username;
 
     @FindBy(id = "prependedInput2")
-    public WebElement password;
+    private WebElement password;
 
     @FindBy(id = "_submit")
-    public WebElement login;
+    private WebElement login;
 
     @FindBy(linkText = "Forgot your password?")
-    public WebElement forgotPassword;
+    private WebElement forgotPassword;
 
+    @FindBy(css = "[class='alert alert-error']")
+    private WebElement warningMessage;
+
+    /**
+     * Constructor
+     * Instantiates PageFactory Class with Driver.getDriver and this Class as params
+     * */
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
 
+    }
+
+    public String getWarningMessageText(){
+        return warningMessage.getText();
     }
     /**
      * Method to login, version 1
